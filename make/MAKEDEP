@@ -1,0 +1,52 @@
+sim.o : sim.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h sim.h caliban.h load_cir.h load_fau.h load_pat.h 
+iofx.o : iofx.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h 
+files.o : files.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h 
+gates.o : gates.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h 
+iosys.o : iosys.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h 
+times.o : times.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h 
+ctrl-c.o : ctrl-c.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h caliban.h 
+fauman.o : fauman.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h fauman.h 
+gengis.o : gengis.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h sim.h gengis.h load_fau.h load_pat.h 
+memory.o : memory.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h ctrl-c.h \
+  macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h gates.h struct.h \
+  3values.h sim.h gengis.h load_cir.h load_fau.h load_pat.h 
+caliban.o : caliban.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h \
+  ctrl-c.h macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h \
+  gates.h struct.h 3values.h sim.h caliban.h options.h 
+dee2cal.o : dee2cal.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h \
+  ctrl-c.h macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h \
+  gates.h struct.h 3values.h caliban.h dee2cal.h 
+edf2cal.o : edf2cal.c data2.h libs.h types.h iofx.h iosys.h debug.h modes.h \
+  times.h ctrl-c.h macros.h memory.h random.h strings.h ansicode.h gatetest.h \
+  files.h gates.h struct.h 3values.h edf2cal.h 
+options.o : options.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h \
+  ctrl-c.h macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h \
+  gates.h struct.h 3values.h sim.h fauman.h gengis.h caliban.h dee2cal.h edf2cal.h \
+  options.h load_cir.h load_fau.h load_pat.h 
+load_cir.o : load_cir.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h \
+  ctrl-c.h macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h \
+  gates.h struct.h 3values.h sim.h load_cir.h load_fau.h load_pat.h 
+load_fau.o : load_fau.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h \
+  ctrl-c.h macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h \
+  gates.h struct.h 3values.h sim.h load_fau.h 
+load_pat.o : load_pat.c libs.h types.h iofx.h iosys.h debug.h modes.h times.h \
+  ctrl-c.h macros.h memory.h random.h strings.h ansicode.h gatetest.h files.h \
+  gates.h struct.h 3values.h load_pat.h 

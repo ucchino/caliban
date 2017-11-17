@@ -1,0 +1,568 @@
+##############################################################################
+#                                                                            #
+#                .~'~.                                                       #
+#               [     [                                                      #
+#               [()-()[                                                      #
+#     ______oooo[_(_)_[oooo_____________________________________________     #
+#    /  ______________________________________________________________  \    #
+#    \_/                                                              \_/    #
+#    / \        o--------------------------------------------o        / \    #
+#    \_/        o  AUTHOR: Ucchino Giuseppe Pier Paolo       o        \_/    #
+#    / \        o  WWW   : http://www.cclinf.polito.it/~ppu  o        / \    #
+#    \_/        o  E-MAIL: s73259@cclinf.polito.it           o        \_/    #
+#    / \        o  S-MAIL: Via Polonghera 18/c Turin (Italy) o        / \    #
+#    \_/        o  PHONE : +39-11-4334266                    o        \_/    # 
+#    / \        o____________________________________________o        / \    #
+#    \_/                                                              \_/    #
+#    / \  "Any sufficiently advanced technology is indistinguishable  / \    #
+#    \_/   from magic."                                               \_/    #
+#    / \                         By  : Charles Clarke         (1917)  / \    #
+#    \_/                         From: Profiles of the Future (1962)  \_/    #
+#    / \    .oooO                                                     / \    #
+#    \  \___(   )___Oooo.____________________________________________/  /    #
+#     \______\ (____(   )______________________________________________/     #
+#             \_)    ) /                                                     #
+#                   (_/                                                      #
+#                                                                            #
+##############################################################################
+
+NAME                = caliban
+
+##############################################################################
+
+YES                 = NAME
+
+##############################################################################
+
+_DOS_               = YES
+_ANSI_              = YES
+_STILL_TESTING_     = YES
+_DEBUG_             =
+_WHEREIS_           = _DEBUG_
+
+#-----------------------------------------------------------------------------
+# _FS32BIT_  ===> 32 Bit FaultSimulation Instead Of 31 Bit FaultSimulation
+# 
+# _GOODFSIM_ ===> During GoodSimulation Caliban Uses The Remaining 31 Bits Of
+#                 The Word For A FaultSimulation.            
+#
+# FLAG: _FS32BIT_  CANNOT BE USED WITH FLAG: _GOODFSIM_
+# FLAG: _GOODFSIM_ CANNOT BE USED WITH FLAG: _FS32BIT_
+#
+#-----------------------------------------------------------------------------
+_FS32BIT_           =
+_GOODFSIM_          = YES
+
+#-----------------------------------------------------------------------------
+# _THRESHOLD_ ====> Dynamic Fault Ordering Based On Number=K Of FFs Having Fault
+#                   Effects. Here We Use A Threshold=Number Of FFs Having Fault
+#                   Effects
+#
+# _FAULT_QSORT_ ==> Full Dynamic Fault Ordering Using >>Only<< Number Of FFs
+#                   Having Fault Effects
+#
+#
+# _REVERSE_SORT_ => Useful Only With Flag: _THRESHOLD_. Order In Reverse Mode
+#                   All Faults Using a THRESHOLD
+#
+#
+# FLAG: _THRESHOLD_   CANNOT BE USED WITH FLAG: _FAULT_QSORT_
+# FLAG: _FAULT_QSORT_ CANNOT BE USED WITH FLAG: _THRESHOLD_
+#
+#
+#-----------------------------------------------------------------------------
+_THRESHOLD_         = YES
+_FAULT_QSORT_       =
+_REVERSE_SORT_      = YES
+
+#-----------------------------------------------------------------------------
+# Critical Path Analysis
+# Kills Fault That Cannot Propagate Its Values To Primary Outputs
+#-----------------------------------------------------------------------------
+_PPU_VISIT_         =
+
+#-----------------------------------------------------------------------------
+# Kill Fault That Cannot Be Propagated For Less Than 2 Levels
+#-----------------------------------------------------------------------------
+_TWO_LEVEL_VISIT_   = YES
+
+#-----------------------------------------------------------------------------
+# Verbose fault simulation
+#-----------------------------------------------------------------------------
+_VERBOSESIM_        =
+
+##############################################################################
+
+PRINT       = echo
+LINK        =
+DEPENDENCIES= makedep
+
+##############################################################################
+
+ifdef _DOS_
+	RM          = del
+	CP          = copy
+	CD          = cd
+	MRM         = del
+	MCP         = copy
+	MDIR        = dir
+	TYPE        = type
+	TOUCHA      = touch a:*.*
+	CHMOD       = attrib +a
+	MKDIR       = md
+	DATA        = @$(PRINT) Done Dear Boz!...
+	TOEXE       = @coff2exe $@
+	DOS2UNIX    = $(TYPE)
+else
+	RM          = rm -f
+	CP          = cp -p
+	CD          = cd
+	MRM         = mdel
+	MCP         = mcopy
+	MDIR        = mdir
+	TYPE        = cat        
+	TOUCHA      =
+	CHMOD       = chmod -R 700
+	MKDIR       = mkdir
+	DATA        = @$(PRINT) "Make Depend Started On" `hostname` "On" `date`
+	TOEXE       =
+	DOS2UNIX    = dos2unix
+endif
+
+##############################################################################
+
+ifdef _DOS_
+	VERSION     = ppu
+	DISK        = a:
+	ALL_FILES   = a:*.*
+	
+	DISKROOT    = a:\.
+	BACKUP      = .\backup
+	ALL_BACKUP  = .\backup\*.*
+	ZIPPED      = .\zipped
+	
+	EDFHOME     = createdf
+	EDFPATH     = a:\createdf
+else
+	VERSION     = 4.0.a
+	DISK        = "a:"
+	ALL_FILES   = "a:*.*"
+	
+	DISKROOT    = a:/
+	BACKUP      = ./backup
+	ALL_BACKUP  = ./backup/*.*
+	ZIPPED      = ./zipped
+
+	EDFHOME     = createdf
+	EDFPATH     = a:/createdf
+endif
+
+##############################################################################
+
+CC    = gcc
+C++   = gpp
+BCC   = bcc
+
+##############################################################################
+
+ifdef _DEBUG_
+	DEBUG    =-g -ansi -pedantic -DDEBUG
+	WARNING  =-O -Wall -Wshadow -Winline -Wcomment -Wimplicit -Wreturn-type -Wunused -Wuninitialized
+	ifdef _WHEREIS_
+		WHEREIS  =-DWHEREIS
+	endif
+else
+	OPTIMIZE =-O99 -finline-functions -funroll-loops
+endif
+
+##############################################################################
+
+ifdef _STILL_TESTING_
+	STILL_TESTING=-pg -DSTILL_TESTING
+endif
+
+##############################################################################
+
+ifdef _ANSI_
+	ANSI     =-DANSI
+endif
+
+##############################################################################
+
+ifdef _FS32BIT_
+	FS32BIT        =-DFS32BIT
+endif
+
+##################################
+
+ifdef _PPU_VISIT_
+	PPU_VISIT      =-DPPU_VISIT
+endif
+
+##################################
+
+ifdef _TWO_LEVEL_VISIT_
+	TWO_LEVEL_VISIT=-DTWO_LEVEL_VISIT
+endif
+
+##################################
+
+ifdef _THRESHOLD_
+	THRESHOLD         =-DTHRESHOLD
+endif
+
+##################################
+
+ifdef _FAULT_QSORT_
+	FAULT_QSORT    =-DFAULT_QSORT
+endif
+
+##################################
+
+ifdef _GOODFSIM_
+	GOODFSIM       =-DGOODFSIM
+endif
+
+##################################
+
+ifdef _VERBOSESIM_
+	VERBOSESIM     =-DVERBOSESIM
+endif
+
+##################################
+
+ifdef _REVERSE_SORT_
+	REVERSE_SORT   =-DREVERSE_SORT
+endif
+
+##############################################################################
+
+CFLAGS   =$(WARNING) $(ANSI) $(DEBUG) $(FS32BIT) $(PPU_VISIT) $(TWO_LEVEL_VISIT) $(THRESHOLD) $(FAULT_QSORT) $(GOODFSIM) $(VERBOSESIM) $(REVERSE_SORT) $(STILL_TESTING) $(WHEREIS) $(OPTIMIZE)
+MFLAGS   =           $(ANSI) $(DEBUG) $(FS32BIT) $(PPU_VISIT) $(TWO_LEVEL_VISIT) $(THRESHOLD) $(FAULT_QSORT) $(GOODFSIM) $(VERBOSESIM) $(REVERSE_SORT) $(STILL_TESTING) $(WHEREIS)
+
+##############################################################################
+
+CFILES =  sim.c \
+	iofx.c \
+	files.c \
+	gates.c \
+	iosys.c \
+	times.c \
+	ctrl-c.c \
+	fauman.c \
+	gengis.c \
+	memory.c \
+	caliban.c \
+	dee2cal.c \
+	edf2cal.c \
+	options.c \
+	load_cir.c \
+	load_fau.c \
+	load_pat.c
+
+HEADERS = sim.h \
+	iofx.h \
+	libs.h \
+	debug.h \
+	files.h \
+	gates.h \
+	iosys.h \
+	modes.h \
+	times.h \
+	types.h \
+	ctrl-c.h \
+	fauman.h \
+	gengis.h \
+	macros.h \
+	memory.h \
+	random.h \
+	struct.h \
+	3values.h \
+	caliban.h \
+	dee2cal.h \
+	edf2cal.h \
+	options.h \
+	strings.h \
+	ansicode.h \
+	gatetest.h \
+	load_cir.h \
+	load_fau.h \
+	load_pat.h
+
+##############################################################################
+
+ASM       =$(CFILES:.c=.s)
+DEP       =$(CFILES:.c=.d)
+OBJECTS   =$(CFILES:.c=.o)
+PREPROCESS=$(CFILES:.c=.i)
+BORLANDASM=$(CFILES:.c=.asm)
+
+##############################################################################
+
+ALL_CFILES=$(CFILES:.c=.xc)
+ALL_HFILES=$(HEADERS:.h=.xh)
+
+##############################################################################
+# Assemble Only Rule
+##############################################################################
+
+%.s: %.c
+	$(CC) $(CFLAGS) -fverbose-asm -S -o $@ $<
+
+##############################################################################
+# Pre-process Only Rule
+##############################################################################
+
+%.i: %.c
+	$(CC) $(CFLAGS) -C -E -o $@ $<
+
+##############################################################################
+# Dep Rule
+##############################################################################
+
+%.d: %.c
+	@$(PRINT) Checking Dependencies For $<
+	@$(CC) -c -MM $(MFLAGS) $< >> $(DEPENDENCIES).tmp
+
+##############################################################################
+# Unix Format Rule
+##############################################################################
+
+%.xc: %.c
+	@$(PRINT) Converted To Unix $<
+	@$(DOS2UNIX) $< > trash 
+	@$(TYPE) trash > $<
+
+%.xh: %.h
+	@$(PRINT) Converted To Unix $< 
+	@$(DOS2UNIX) $< > trash
+	@$(TYPE) trash > $<
+	
+##############################################################################
+# Simulation Rule
+##############################################################################
+
+%: %.cal
+	$(NAME) -y $@ -s
+
+##############################################################################
+# Assemble Only Rule With Borland C
+##############################################################################
+
+%.asm: %.c
+	ifdef _DOS_
+		$(BCC) -1 -O2 -a -G -S $<
+	endif
+
+##############################################################################
+#Tag Rule
+##############################################################################
+
+%.tagc: %.c
+	@revisor $<
+	$(PRINT) Tagged..!
+
+%.tagh: %.h
+	@revisor $<
+	$(PRINT) Tagged..!
+
+##############################################################################
+# Targets
+##############################################################################
+
+$(NAME):  $(OBJECTS)
+	$(CC) $(CFLAGS) -o $@ $(OBJECTS) $(LINK) create_edf.a
+	$(TOEXE)
+	$(RM) $(NAME)
+
+ifdef _DOS_          
+	ifdef _STILL_TESTING_
+		@$(PRINT) "Incoming Profiling Missile..."
+	else
+		@$(RM) $(NAME)
+	endif
+else
+	@$(PRINT) "Incoming Missile..."
+endif
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Assemble Only
+##############################################################################
+
+asm:      $(ASM)
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Preprocess Only
+##############################################################################
+
+pre:      $(PREPROCESS)
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Convert Files To Unix Text Format
+##############################################################################
+
+unix:     $(ALL_CFILES) $(ALL_HFILES) 
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Clean from rumenta files
+##############################################################################
+
+clean:    
+	@$(RM) .*~
+	@$(RM) *~
+	@$(RM) *.BAK
+	@$(RM) $(ASM)
+	@$(RM) $(OBJECTS)
+	@$(RM) $(PREPROCESS)
+	@$(RM) $(BORLANDASM)
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Build dependences of c modules
+##############################################################################
+
+dep:      $(DEP)
+	@$(PRINT) Commiting dependencies to $(DEPENDENCIES)...
+	@$(CP) $(DEPENDENCIES).tmp $(DEPENDENCIES)
+	@$(RM) $(DEPENDENCIES).tmp
+	@$(CHMOD) $(DEPENDENCIES)
+	@$(DATA)
+		
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Revive makefile from a basemake corrections
+##############################################################################
+
+load:
+	@$(PRINT) Reviving Old Makefile
+	@$(CP) makesave makefile
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Save makefile To basemake
+##############################################################################
+
+save:
+	@$(PRINT) Saving New Makefile
+	@$(CP) makefile makesave
+ 
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Tag Current C+H Files 
+##############################################################################
+
+tags:
+	@revisor *.c *.h
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Save Current C+H Files 
+##############################################################################
+
+bk:     
+	@$(MKDIR)  $(BACKUP)
+	@$(MRM)    $(ALL_BACKUP)
+	@$(CP) *.* $(BACKUP)
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Backup & Compress Current C+H Files 
+##############################################################################
+
+zip:
+	@latest *.c;*.h;*.a;*.bat;*.; $(ZIPPED)\\$(NAME) ARJ a -p1 -i2 -jm -jh65535
+
+##############################################################################
+# MAKE - COMMAND LINE OPTION ALLOWED
+# Backup Current C+H Files 
+##############################################################################
+
+disk:
+	@$(MDIR) $(DISK)
+	@$(MRM) $(ALL_FILES)
+	@$(MCP) *.c    $(DISK)
+	@$(MCP) *.h    $(DISK)
+	@$(MCP) *.man  $(DISK)
+	@$(MCP) *.alg  $(DISK)
+	@$(MCP) make*. $(DISK)
+	@$(MCP) *.cfg  $(DISK)
+	@$(TOUCHA)        
+
+	@$(CD) $(EDFHOME)
+	@$(MKDIR) $(EDFPATH)
+	@$(CD) $(EDFPATH)
+
+	@$(MDIR) $(DISK)
+	@$(MRM) $(ALL_FILES)
+	@$(MCP) *.c    $(DISK)
+	@$(MCP) *.h    $(DISK)
+	@$(MCP) *.l    $(DISK)
+	@$(MCP) make*. $(DISK)
+	@$(TOUCHA)
+
+	@$(CD) $(DISKROOT)
+	
+	ifndef _DOS_                
+		eject
+	endif
+
+
+##############################################################################
+# Gzip Rule
+##############################################################################
+
+%.gzc: %.c
+	gzip -c9 $< > $@
+	@$(CHMOD) $@
+
+%.gzh: %.h
+	gzip -c9 $< > $@
+	@$(CHMOD) $@
+
+##############################################################################
+
+help:
+	@$(PRINT)                                                         
+	@$(PRINT) [------------------------------------------------------]
+	@$(PRINT) [                 PPU - Makefile-Menu                  ]
+	@$(PRINT) [------------------------------------------------------]
+	@$(PRINT) [  [make ] circuit  == START SIM FOR CIRCUIT           ] 
+	@$(PRINT) [------------------------------------------------------]
+	@$(PRINT) [  [make ] file.s   == Assemble File                   ]
+	@$(PRINT) [  [make ] file.asm == Assemble File Using Borland     ]
+	@$(PRINT) [  [asm  ] ------   == Assemble All Files              ]
+	@$(PRINT) [------------------------------------------------------]
+	@$(PRINT) [  [make ] file.i   == Preprocess File                 ]
+	@$(PRINT) [  [pre  ] ------   == Preprocess All Files            ]
+	@$(PRINT) [------------------------------------------------------]
+	@$(PRINT) [  [save ] ------   == Save Makefile                   ]
+	@$(PRINT) [  [load ] ------   == Load Makefile Replacing Old     ]
+	@$(PRINT) [------------------------------------------------------]
+	@$(PRINT) [  [bk   ] ------   == Save   Work Files               ]
+	@$(PRINT) [  [zip  ] ------   == ZipAll Work Files               ]
+	@$(PRINT) [  [disk ] ------   == Backup Work Files On Floppy     ]
+	@$(PRINT) [  [make ] file.gzc == Compress With GZIP .C Files     ]
+	@$(PRINT) [  [make ] file.gzh == Compress With GZIP .H Files     ]
+	@$(PRINT) [------------------------------------------------------]
+	@$(PRINT) [  [dep  ] ------   == Find Dependencies               ]
+	@$(PRINT) [  [unix ] ------   == Convert To Unix Format          ]
+	@$(PRINT) [  [tags ] ------   == Tag All                         ]
+	@$(PRINT) [  [tagc ] ------   == Tag All .C Files                ]
+	@$(PRINT) [  [tagh ] ------   == Tag All .H Files                ]
+	@$(PRINT) [  [clean] ------   == Clean All From Rumenta          ]
+	@$(PRINT) [------------------------------------------------------]
+
+##############################################################################
+# Grab dependencies.  Note that the file $(DEPENDENCIES) *must*
+# exist, even if empty.
+##############################################################################
+
+include $(DEPENDENCIES)
+
+##############################################################################
+
+

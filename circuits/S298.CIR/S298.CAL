@@ -1,0 +1,158 @@
+Edf2Cal 0.0.2s Package_Utility
+File_Name: s298.cal
+Total_Levels: 11
+Total_Gates: 139
+Total_FF: 14
+Total_PI: 3
+Total_PO: 6
+Total_Descriptors: 149
+Id# SType NType Level Fanin Fanout Fanout_List
+0 Pi 5 0 0 1 To 77
+1 Pi 5 0 0 1 To 78
+2 Pi 5 0 0 1 To 73
+3 Clock 12 0 0 0
+4 Buffer 0 3 1 1 To 143
+5 Buffer 0 3 1 1 To 144
+6 Buffer 0 3 1 1 To 145
+7 Buffer 0 3 1 1 To 146
+8 Buffer 0 3 1 1 To 147
+9 Buffer 0 3 1 1 To 148
+10 FF 4 0 1 10 To 40 To 55 To 85 To 86 To 88 To 93 To 115 To 92 To 96 To 11
+11 Nor 26 3 2 1 To 10
+12 FF 4 0 1 12 To 43 To 46 To 56 To 86 To 88 To 97 To 101 To 122 To 123 To 132 To 134 To 92
+13 Nor 58 3 4 1 To 12
+14 FF 4 0 1 12 To 42 To 48 To 58 To 88 To 103 To 110 To 122 To 123 To 126 To 133 To 134 To 92
+15 Nor 58 3 4 1 To 14
+16 FF 4 0 1 11 To 41 To 47 To 62 To 85 To 108 To 109 To 123 To 126 To 133 To 134 To 96
+17 Nor 26 5 2 1 To 16
+18 FF 4 0 1 13 To 44 To 60 To 103 To 104 To 105 To 110 To 116 To 125 To 131 To 132 To 135 To 114 To 98
+19 Nor 42 6 3 1 To 18
+20 FF 4 0 1 1 To 50
+21 Nor 42 5 3 1 To 20
+22 FF 4 0 1 2 To 51 To 57
+23 Nor 58 6 4 1 To 22
+24 FF 4 0 1 3 To 53 To 59 To 136
+25 Nor 42 8 3 1 To 24
+26 FF 4 0 1 3 To 61 To 66 To 124
+27 Nor 26 8 2 1 To 26
+28 FF 4 0 1 3 To 68 To 103 To 129
+29 Nor 26 9 2 1 To 28
+30 FF 4 0 1 3 To 79 To 127 To 128
+31 Nor 26 8 2 1 To 30
+32 FF 4 0 1 2 To 65 To 81
+33 Nor 26 8 2 1 To 32
+34 FF 4 0 1 4 To 49 To 72 To 118 To 100
+35 Nor 42 5 3 1 To 34
+36 FF 4 0 1 3 To 45 To 76 To 120
+37 Nor 42 5 3 1 To 36
+38 Not 8 3 1 3 To 83 To 84 To 137
+39 Not 8 2 1 7 To 38 To 11 To 13 To 15 To 21 To 35 To 37
+40 Not 8 1 1 4 To 87 To 89 To 121 To 122
+41 Not 8 1 1 3 To 91 To 121 To 94
+42 Not 8 1 1 6 To 85 To 89 To 90 To 93 To 121 To 96
+43 Not 8 1 1 5 To 87 To 90 To 93 To 121 To 96
+44 Not 8 1 1 3 To 83 To 95 To 94
+45 Not 8 1 1 2 To 84 To 95
+46 Not 8 1 1 1 To 100
+47 Not 8 1 1 1 To 98
+48 Not 8 1 1 3 To 97 To 101 To 100
+49 Not 8 1 1 2 To 97 To 101
+50 Not 8 1 1 2 To 99 To 102
+51 Not 8 1 1 1 To 52
+52 Not 8 2 1 1 To 4
+53 Not 8 1 1 1 To 54
+54 Not 8 2 1 1 To 5
+55 Not 8 1 1 1 To 130
+56 Not 8 1 1 3 To 104 To 126 To 135
+57 Not 8 1 1 1 To 105
+58 Not 8 1 1 5 To 104 To 107 To 127 To 135 To 136
+59 Not 8 1 1 1 To 108
+60 Not 8 1 1 6 To 106 To 109 To 123 To 129 To 134 To 136
+61 Not 8 1 1 1 To 110
+62 Not 8 1 1 8 To 106 To 107 To 111 To 124 To 125 To 128 To 129 To 131
+63 Not 8 6 1 6 To 111 To 113 To 130 To 138 To 139 To 141
+64 Nor 26 5 2 4 To 63 To 115 To 129 To 23
+65 Not 8 1 1 1 To 116
+66 Not 8 1 1 1 To 67
+67 Not 8 2 1 1 To 6
+68 Not 8 1 1 1 To 69
+69 Not 8 2 1 1 To 7
+70 Not 8 3 1 1 To 117
+71 Not 8 2 1 2 To 70 To 118
+72 Not 8 1 1 1 To 117
+73 Not 8 1 1 1 To 71
+74 Not 8 3 1 1 To 119
+75 Not 8 2 1 2 To 74 To 120
+76 Not 8 1 1 1 To 119
+77 Not 8 1 1 1 To 39
+78 Not 8 1 1 1 To 75
+79 Not 8 1 1 1 To 80
+80 Not 8 2 1 1 To 8
+81 Not 8 1 1 1 To 82
+82 Not 8 2 1 1 To 9
+83 And 17 4 2 1 To 142
+84 And 17 4 2 1 To 142
+85 And 33 2 3 1 To 13
+86 And 17 1 2 1 To 13
+87 And 17 2 2 1 To 13
+88 And 33 1 3 1 To 15
+89 And 17 2 2 1 To 15
+90 And 17 2 2 1 To 15
+91 And 17 2 2 1 To 17
+92 Nand 41 1 3 1 To 91
+93 And 49 3 4 1 To 19
+94 Nor 26 2 2 1 To 93
+95 And 33 3 3 1 To 19
+96 Nand 57 2 4 1 To 95
+97 And 49 3 4 1 To 21
+98 Nor 26 2 2 3 To 97 To 101 To 100
+99 And 17 4 2 1 To 21
+100 Nand 57 3 4 2 To 99 To 102
+101 And 49 3 4 1 To 64
+102 And 17 4 2 1 To 64
+103 And 33 1 3 1 To 112
+104 And 33 2 3 1 To 112
+105 And 17 2 2 1 To 23
+106 And 17 2 2 1 To 23
+107 And 17 2 2 1 To 23
+108 And 17 2 2 1 To 25
+109 And 17 2 2 1 To 25
+110 And 33 2 3 1 To 27
+111 And 33 7 3 1 To 29
+112 Nor 26 3 2 1 To 111
+113 And 17 7 2 1 To 31
+114 Nand 57 3 4 1 To 113
+115 And 17 6 2 1 To 31
+116 And 17 2 2 1 To 33
+117 And 17 4 2 1 To 35
+118 And 17 3 2 1 To 35
+119 And 17 4 2 1 To 37
+120 And 17 3 2 1 To 37
+121 Or 50 2 4 1 To 137
+122 Or 34 2 3 1 To 137
+123 Or 50 2 4 1 To 139
+124 Or 18 2 2 1 To 139
+125 Or 18 2 2 1 To 139
+126 Or 34 2 3 1 To 114
+127 Or 18 2 2 1 To 114
+128 Or 18 2 2 1 To 114
+129 Or 50 6 4 1 To 140
+130 Or 18 7 2 1 To 140
+131 Or 18 2 2 1 To 141
+132 Or 18 1 2 1 To 141
+133 Or 18 1 2 1 To 141
+134 Or 50 2 4 1 To 138
+135 Or 34 2 3 1 To 138
+136 Or 34 2 3 1 To 138
+137 Nand 41 4 3 1 To 17
+138 Nand 57 7 4 1 To 25
+139 Nand 57 7 4 1 To 27
+140 Nand 25 8 2 1 To 29
+141 Nand 57 7 4 1 To 33
+142 Nor 26 5 2 1 To 19
+143 Po 13 10 1 0
+144 Po 13 10 1 0
+145 Po 13 10 1 0
+146 Po 13 10 1 0
+147 Po 13 10 1 0
+148 Po 13 10 1 0

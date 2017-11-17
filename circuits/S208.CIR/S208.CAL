@@ -1,0 +1,134 @@
+Edf2Cal 0.0.2s Package_Utility
+File_Name: s208.cal
+Total_Levels: 14
+Total_Gates: 113
+Total_FF: 8
+Total_PI: 10
+Total_PO: 1
+Total_Descriptors: 125
+Id# SType NType Level Fanin Fanout Fanout_List
+0 Pi 5 0 0 10 To 35 To 36 To 51 To 58 To 82 To 45 To 98 To 32 To 57 To 64
+1 Pi 5 0 0 1 To 102
+2 Pi 5 0 0 1 To 76
+3 Pi 5 0 0 1 To 75
+4 Pi 5 0 0 1 To 99
+5 Pi 5 0 0 1 To 100
+6 Pi 5 0 0 1 To 70
+7 Pi 5 0 0 1 To 69
+8 Pi 5 0 0 1 To 96
+9 Pi 5 0 0 1 To 98
+10 Clock 12 0 0 0
+11 Buffer 0 12 1 1 To 124
+12 FF 4 0 1 5 To 37 To 55 To 103 To 118 To 90
+13 Nand 25 5 2 1 To 12
+14 FF 4 0 1 6 To 30 To 38 To 54 To 78 To 101 To 90
+15 Or 18 5 2 1 To 14
+16 FF 4 0 1 5 To 33 To 53 To 80 To 105 To 90
+17 Nor 26 4 2 1 To 16
+18 FF 4 0 1 6 To 34 To 52 To 81 To 105 To 32 To 90
+19 Or 18 3 2 1 To 18
+20 FF 4 0 1 3 To 62 To 106 To 119
+21 Nand 25 8 2 1 To 20
+22 FF 4 0 1 4 To 46 To 61 To 108 To 95
+23 Nand 25 9 2 1 To 22
+24 FF 4 0 1 6 To 42 To 47 To 60 To 84 To 87 To 107
+25 Nor 26 7 2 1 To 24
+26 FF 4 0 1 4 To 43 To 59 To 85 To 41
+27 Or 18 6 2 1 To 26
+28 Not 8 3 1 1 To 78
+29 Nor 26 2 2 3 To 28 To 39 To 77
+30 Not 8 1 1 1 To 77
+31 Not 8 2 1 1 To 80
+32 Nand 25 1 2 2 To 31 To 79
+33 Not 8 1 1 1 To 79
+34 Not 8 1 1 1 To 82
+35 Not 8 1 1 1 To 81
+36 Not 8 1 1 2 To 104 To 29
+37 Not 8 1 1 1 To 88
+38 Not 8 1 1 3 To 103 To 104 To 88
+39 Not 8 3 1 1 To 103
+40 Not 8 5 1 1 To 84
+41 Nand 25 4 2 4 To 40 To 50 To 83 To 109
+42 Not 8 1 1 1 To 83
+43 Not 8 1 1 1 To 86
+44 Not 8 4 1 1 To 85
+45 And 17 3 2 3 To 44 To 86 To 41
+46 Not 8 1 1 3 To 106 To 109 To 49
+47 Not 8 1 1 1 To 109
+48 Not 8 8 1 1 To 23
+49 Nor 26 7 2 1 To 48
+50 Not 8 5 1 2 To 87 To 107
+51 Not 8 1 1 1 To 97
+52 Not 8 1 1 2 To 57 To 97
+53 Not 8 1 1 2 To 120 To 66
+54 Not 8 1 1 1 To 68
+55 Not 8 1 1 1 To 101
+56 Not 8 3 1 1 To 120
+57 Nand 25 2 2 2 To 56 To 66
+58 Not 8 1 1 1 To 91
+59 Not 8 1 1 2 To 64 To 91
+60 Not 8 1 1 2 To 121 To 92
+61 Not 8 1 1 1 To 93
+62 Not 8 1 1 1 To 95
+63 Not 8 3 1 1 To 121
+64 Nand 25 2 2 2 To 63 To 92
+65 Not 8 4 1 1 To 111
+66 Nor 26 3 2 1 To 65
+67 Not 8 6 1 1 To 110
+68 Nor 26 5 2 1 To 67
+69 Not 8 1 1 1 To 111
+70 Not 8 1 1 1 To 110
+71 Not 8 5 1 1 To 113
+72 And 17 4 2 1 To 71
+73 Not 8 7 1 1 To 112
+74 And 17 6 2 1 To 73
+75 Not 8 1 1 1 To 113
+76 Not 8 1 1 1 To 112
+77 And 17 3 2 1 To 15
+78 And 17 4 2 1 To 15
+79 And 17 2 2 1 To 17
+80 And 17 3 2 1 To 17
+81 And 17 2 2 1 To 19
+82 And 17 2 2 1 To 19
+83 And 17 5 2 1 To 25
+84 And 17 6 2 1 To 25
+85 And 17 5 2 1 To 27
+86 And 17 4 2 1 To 27
+87 And 17 6 2 1 To 49
+88 Nor 42 2 3 1 To 45
+89 And 17 3 2 1 To 99
+90 Nor 58 1 4 4 To 89 To 72 To 74 To 94
+91 Nor 26 2 2 1 To 89
+92 Nor 26 3 2 1 To 72
+93 Nor 26 5 2 1 To 74
+94 And 17 6 2 1 To 102
+95 Nor 42 5 3 1 To 94
+96 And 17 3 2 1 To 122
+97 Nor 26 2 2 1 To 96
+98 And 17 1 2 1 To 122
+99 And 17 4 2 1 To 123
+100 And 17 6 2 1 To 123
+101 Nor 42 5 3 1 To 100
+102 And 17 7 2 1 To 117
+103 Or 34 4 3 1 To 13
+104 Or 34 2 3 1 To 118
+105 Nand 25 1 2 3 To 104 To 88 To 29
+106 Or 34 7 3 1 To 21
+107 Nand 25 6 2 2 To 106 To 108
+108 Or 18 7 2 1 To 23
+109 Or 34 5 3 1 To 119
+110 Or 18 7 2 1 To 115
+111 Or 18 5 2 1 To 115
+112 Or 18 8 2 1 To 116
+113 Or 18 6 2 1 To 116
+114 Or 18 10 2 1 To 117
+115 Nand 41 8 3 1 To 114
+116 Nand 41 9 3 1 To 114
+117 Or 18 11 2 1 To 11
+118 Nand 25 3 2 1 To 13
+119 Nand 25 6 2 1 To 21
+120 Nand 25 4 2 2 To 68 To 101
+121 Nand 25 4 2 2 To 93 To 95
+122 Nor 26 4 2 1 To 115
+123 Nor 26 7 2 1 To 116
+124 Po 13 13 1 0

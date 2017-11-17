@@ -1,0 +1,29 @@
+Edf2Cal 0.0.2s Package_Utility
+File_Name: s27.cal
+Total_Levels: 9
+Total_Gates: 14
+Total_FF: 3
+Total_PI: 4
+Total_PO: 1
+Total_Descriptors: 20
+Id# SType NType Level Fanin Fanout Fanout_List
+0 Pi 5 0 0 1 To 12
+1 Pi 5 0 0 1 To 16
+2 Pi 5 0 0 1 To 11
+3 Pi 5 0 0 1 To 17
+4 Clock 12 0 0 0
+5 Buffer 0 7 1 1 To 19
+6 FF 4 0 1 1 To 9
+7 Nor 26 6 2 1 To 6
+8 FF 4 0 1 1 To 14
+9 Nor 26 5 2 3 To 8 To 13 To 7
+10 FF 4 0 1 1 To 16
+11 Nor 26 2 2 1 To 10
+12 Not 8 1 1 2 To 14 To 7
+13 Not 8 6 1 1 To 5
+14 And 17 2 2 2 To 15 To 17
+15 Or 18 3 2 1 To 18
+16 Nor 26 1 2 2 To 15 To 11
+17 Or 18 3 2 1 To 18
+18 Nand 25 4 2 1 To 9
+19 Po 13 8 1 0

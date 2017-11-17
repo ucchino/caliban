@@ -1,0 +1,86 @@
+# Project: Calibano
+# Makefile created by Dev-C++ 4.9.9.2
+
+# This Makefile is written for syntax check!
+# Regenerate it if you want to use this Makefile to build.
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = Calibano_private.res
+OBJ  = CALIBAN.o CTRL-C.o DEE2CAL.o DFS.o EDF2CAL.o FAUMAN.o FILES.o GATES.o GENGIS.o IOFX.o IOSYS.o LOAD_CIR.o LOAD_FAU.o LOAD_PAT.o MEMORY.o OPTIONS.o SIM.o TIMES.o $(RES)
+LINKOBJ  = CALIBAN.o CTRL-C.o DEE2CAL.o DFS.o EDF2CAL.o FAUMAN.o FILES.o GATES.o GENGIS.o IOFX.o IOSYS.o LOAD_CIR.o LOAD_FAU.o LOAD_PAT.o MEMORY.o OPTIONS.o SIM.o TIMES.o $(RES)
+LIBS =  -L"C:/Programmi/Dev-Cpp/lib"  
+INCS =  -I"C:/Programmi/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Programmi/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Programmi/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Programmi/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Programmi/Dev-Cpp/include/c++/3.4.2"  -I"C:/Programmi/Dev-Cpp/include" 
+BIN  = Calibano.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom $(OBJ) $(BIN)
+
+all: all-before Calibano.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+
+CALIBAN.o:CALIBAN.C
+	$(CC) -S CALIBAN.C -o nul $(CFLAGS)
+
+CTRL-C.o:CTRL-C.C
+	$(CC) -S CTRL-C.C -o nul $(CFLAGS)
+
+DEE2CAL.o:DEE2CAL.C
+	$(CC) -S DEE2CAL.C -o nul $(CFLAGS)
+
+DFS.o:DFS.C
+	$(CC) -S DFS.C -o nul $(CFLAGS)
+
+EDF2CAL.o:EDF2CAL.C
+	$(CC) -S EDF2CAL.C -o nul $(CFLAGS)
+
+FAUMAN.o:FAUMAN.C
+	$(CC) -S FAUMAN.C -o nul $(CFLAGS)
+
+FILES.o:FILES.C
+	$(CC) -S FILES.C -o nul $(CFLAGS)
+
+GATES.o:GATES.C
+	$(CC) -S GATES.C -o nul $(CFLAGS)
+
+GENGIS.o:GENGIS.C
+	$(CC) -S GENGIS.C -o nul $(CFLAGS)
+
+IOFX.o:IOFX.C
+	$(CC) -S IOFX.C -o nul $(CFLAGS)
+
+IOSYS.o:IOSYS.C
+	$(CC) -S IOSYS.C -o nul $(CFLAGS)
+
+LOAD_CIR.o:LOAD_CIR.C
+	$(CC) -S LOAD_CIR.C -o nul $(CFLAGS)
+
+LOAD_FAU.o:LOAD_FAU.C
+	$(CC) -S LOAD_FAU.C -o nul $(CFLAGS)
+
+LOAD_PAT.o:LOAD_PAT.C
+	$(CC) -S LOAD_PAT.C -o nul $(CFLAGS)
+
+MEMORY.o:MEMORY.C
+	$(CC) -S MEMORY.C -o nul $(CFLAGS)
+
+OPTIONS.o:OPTIONS.C
+	$(CC) -S OPTIONS.C -o nul $(CFLAGS)
+
+SIM.o:SIM.C
+	$(CC) -S SIM.C -o nul $(CFLAGS)
+
+TIMES.o:TIMES.C
+	$(CC) -S TIMES.C -o nul $(CFLAGS)
+
+Calibano_private.res:
+	$(WINDRES) -i Calibano_private.rc --input-format=rc -o nul -O coff 

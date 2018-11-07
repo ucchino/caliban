@@ -1,14 +1,14 @@
 Caliban.                                                                  
                                                                           
   Un fault simulator che adotta un algoritmo denominato "GODFATHER"       
-ideato dalla mente malata di Pier Paolo Ucchino (s73259@cclix1.polito.it).
-Il programma e' stato scritto a quattro mani e piedi durante la primavera 
+ideato da Pier Paolo Ucchino (s73259@cclix1.polito.it).
+Il programma e' stato scritto a quattro mani durante la primavera 
 del 1997 e il Natale dello stesso anno. L'ideazione e la messa a punto nei
-dettagli dell'algoritmo ha richiesto un mese circa di scervellamenti vari.
+dettagli dell'algoritmo ha richiesto un mese circa di approfondimenti vari.
 A tal proposito vorrei menzionare colui grazie al quale Caliban e' nato...
 Massimiliano Schillaci detto Max o M0... Solo grazie alla sua enorme, anzi
-(conoscendomi) direi titanica, pazienza sono riuscito a mettere insieme un
-qualcosa che funzionicchi abbastanza... E' solo grazie alle sue spiegazioni*
+direi titanica, pazienza sono riuscito a mettere insieme un qualcosa che
+ha prestazioni di tutto rispetto. E' solo grazie alle sue spiegazioni*
 che sono riuscito a capire come funziona concettualmente un FaultSimulator
 
 - Sfruttamento delle risorse hardware specifiche (core)
@@ -21,3 +21,6 @@ che sono riuscito a capire come funziona concettualmente un FaultSimulator
 
 - Contempla il caso di ingressi sincronizzati (PI connessi
   direttamente ad un FF)
+
+Il codice visto con gli occhi di oggi e' un po' rozzo e puo' essere
+migliorato.

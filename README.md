@@ -1,17 +1,17 @@
-Caliban.                                                                  
-                                                                          
-  Un fault simulator che adotta un algoritmo denominato "GODFATHER" ideato da Pier Paolo Ucchino.
+Caliban.
 
-Si basa pesantemente sull'accellerazione hardware data dai barrel shifter (è un circuito digitale progettato per eseguire operazioni di bit shift su un data word (costituito da un numero specifico di bit) in un tempo corrispondente ad un ciclo di clock). Il parallelismo e' dato dalla word e permette di valutare in un colpo solo 32 circuiti identici ma con valori dei FF diversi. Non ho provato su circuiti a 64 bit.
+A fault simulator that adopts an algorithm called "GODFATHER" created by Pier Paolo Ucchino.
 
-Il programma e' stato scritto a quattro mani durante la primavera del 1997 e il Natale dello stesso anno. L'ideazione e la messa a punto nei dettagli dell'algoritmo ha richiesto un mese circa di approfondimenti vari. A tal proposito vorrei menzionare colui grazie al quale Caliban e' nato... Massimiliano Schillaci detto Max o M0... Solo grazie alla sua enorme pazienza sono riuscito a mettere insieme un qualcosa che ha prestazioni di tutto rispetto. E' solo grazie alle sue spiegazioni che sono riuscito a capire come funziona concettualmente un FaultSimulator.
+It is heavily based on hardware acceleration given by barrel shifters (it is a digital circuit designed to perform bit shift operations on a data word (consisting of a specific number of bits) in a time corresponding to a clock cycle). Parallelism is given by the word and allows to evaluate in one fell swoop 32 identical circuits but with different FF values. I haven't tried it on 64 bit circuits.
 
-- Sfruttamento delle risorse hardware specifiche (core)
+The program was written in four hands during the spring of 1997 and Christmas of the same year. The creation and fine-tuning of the algorithm in detail required around a month of various in-depth analyzes. In this regard, I would like to mention the one with whom Caliban was born ... Massimiliano Schillaci called Max or M0 ... Only thanks to his enormous patience I was able to put together something that has respectable performances. It is only thanks to his explanations that I managed to understand how a FaultSimulator works conceptually.
 
-- Ordinamento dinamico di guasti che eccitano molti FF
+Exploitation of specific hardware resources (core)
 
-- Non necessita di accorgimenti di alcun tipo in caso di 2 FF connessi direttamente fra loro (contrariamente a quanto fa HOPE oppure il Molokh versione diagnostica)
+Dynamic ordering of faults which excite many FFs
 
-- Contempla il caso di ingressi sincronizzati (PI connessi direttamente ad un FF)
+It does not require any kind of precautions in case of 2 FF connected directly to each other (contrary to what HOPE does or the Molokh diagnostic version)
 
-Il codice visto con gli occhi di oggi e' un po' rozzo e puo' essere migliorato.
+Contemplates the case of synchronized inputs (PI connected directly to an FF)
+
+The code seen through today's eyes is a bit rough and can be improved.
